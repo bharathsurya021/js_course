@@ -71,3 +71,47 @@ function fruitProcessor1(banana, papaya) {
 
 const newSmoothie = fruitProcessor1(3, 5)
 console.log(newSmoothie);
+
+//Exercise array
+
+const years = [1990, 1993, 1997, 2000,]
+const index1 = calcAge1(years[0])
+const index2 = calcAge1(years[1])
+const index3 = calcAge1(years[2])
+const index4 = calcAge1(years[3])
+console.log(index1, index2, index3, index4);
+
+const ages = [calcAge1(years[0]), calcAge1(years[1]), calcAge1(years[2]), calcAge1(years[years.length - 1])]
+
+console.log(ages);
+
+// Array built in methods or array operations
+
+const arr = [2, 3, 21, 6, 7]
+
+arr.push('john')
+console.log(arr);
+arr.pop()
+const newArray = arr.push(33)
+console.log(arr);
+const newLength = arr.push(16) // assign to new variable of push function gives length of updated arr
+const removedElement = arr.pop() // gives removed element
+console.log(newLength, newArray, removedElement);
+
+arr.shift() // removes  first element
+console.log(arr);
+const addtoFirst = arr.unshift(81) // adds to first element
+console.log(arr, addtoFirst);
+
+console.log(arr.indexOf(7));
+
+console.log(arr.includes('81'));// includes method follows strict equality to check the element is in array or not
+console.log(arr.includes(81));
+console.log(arr.includes(108));
+
+//includes method used in conditional statements to check element in the array
+if (arr.includes(81)) {
+    console.log('isInside');
+} else {
+    console.log('Not found');
+}
