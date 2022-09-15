@@ -24,6 +24,7 @@ const john = {
 mark.calcBmi()
 john.calcBmi()
 console.log((mark.calcBmi()), john.calcBmi());
-const higher = mark.bmi > john.bmi ? `${mark.fullName}'s bmi (${mark.bmi}) is greater than ${john.fullName}'s(${john.bmi})` : `${john.fullName}'s bmi(${john.bmi}) is greater than ${mark.fullName}'s(${mark.bmi})`
+const higher = mark.bmi > john.bmi ? `${mark.fullName}'s bmi (${mark.bmi}) is greater than ${john.fullName}'s(${john.bmi})`
+    : mark.bmi < john.bmi ? `${john.fullName}'s bmi(${john.bmi}) is greater than ${mark.fullName}'s(${mark.bmi})` : `Both ${mark.fullName} and ${john.fullName} have same bmi's`
 
 console.log(higher);
