@@ -74,7 +74,7 @@ console.log(newSmoothie);
 
 //Exercise array
 
-const years = [1990, 1993, 1997, 2000,]
+const years = [1990, 1993, 1997, 2000]
 const index1 = calcAge1(years[0])
 const index2 = calcAge1(years[1])
 const index3 = calcAge1(years[2])
@@ -115,3 +115,78 @@ if (arr.includes(81)) {
 } else {
     console.log('Not found');
 }
+
+//Objects
+
+const objectName = {
+    firstName: 'Bharath',
+    secondName: 'Surya',
+    age: 2022 - 1996,
+    profession: 'Teacher',
+    friends: ['Ram', 'Lakshman', 'Ravana']
+
+}
+
+console.log(objectName.friends); //dot notation
+console.log(objectName['profession']); //bracket notation
+
+// const interest = prompt('profession,friends,firstName,lastName,age')
+// console.log(interest);
+// //console.log(objectName.interest);// gives undefined coz our object didn't define interest as property
+// console.log(objectName[interest]);
+
+// if (objectName[interest]) {
+//     console.log(objectName[interest]);
+// } else {
+//     console.log('Wrong request! choose again');
+// }
+
+objectName.location = 'India'
+objectName['twitter'] = 'watashibharath'
+
+console.log(objectName);
+console.log(objectName.location);
+
+// for loop
+for (let i = 1; i <= 10 && i > 0; i++) {
+    console.log(`This is string ${i}`);
+}
+
+const arr1 = ['m', 1.2, [34, 68], 'john']
+const types = []
+for (let i = 0; i < 4; i++) {
+    console.log(arr1[i]);
+    // types[i] = typeof arr1[i]
+    types.push(typeof arr1[i])
+}
+console.log(types);
+
+
+//foreach loop
+
+
+arr1.forEach(element => {
+    console.log(element);
+});
+
+const ageArray = []
+
+for (let i = 0; i < years.length; i++) {
+    const age = 2022 - years[i]
+    ageArray.push(age)
+}
+
+console.log(ageArray);
+
+
+//continue and break
+for (let i = 0; i < 4; i++) {
+    // if (typeof arr1[i] !== 'string') {
+    //     continue // skips to next iteration
+    // }
+    if (typeof arr1[i] === 'number') {
+        break // stops the iteration 
+    }
+    console.log(arr1[i], typeof arr1[i]);
+}
+
