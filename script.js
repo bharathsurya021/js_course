@@ -190,7 +190,7 @@ for (let i = 0; i < 4; i++) {
     console.log(arr1[i], typeof arr1[i]);
 }
 
-<<<<<<< HEAD
+
 
 
 for (let i = arr1.length - 1; i >= 0; i--) {
@@ -227,5 +227,59 @@ while (dice !== 6) {
     }
 }
 console.log(dice);
-=======
->>>>>>> dae9c23ce0346d596cdb94533b5a5bad2315f36b
+
+//calculate temp amplitude
+
+const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5]
+
+const calcTempAmplitude = function (temps) {
+    let max = temps[0]
+    let min = temps[0]
+    for (let i = 0; i < temps.length; i++) {
+        const currentTemp = temps[i]
+        if (typeof currentTemp === 'string') {
+            continue
+        }
+        if (currentTemp > max) {
+            max = currentTemp
+        }
+        if (currentTemp < min) {
+            min = currentTemp
+        }
+
+    }
+
+
+    console.log(max, min)
+    return max - min
+}
+
+const amplitude = calcTempAmplitude(temperatures)
+console.log(amplitude)
+
+const calcTempAmplitudeNew = function (temps1, temps2) {
+    const temps = temps1.concat(temps2)
+    console.log(temps);
+    let max = temps[0]
+    let min = temps[0]
+    for (let i = 0; i < temps.length; i++) {
+        const currentTemp = temps[i]
+        if (typeof currentTemp === 'string') {
+            continue
+        }
+        if (currentTemp > max) {
+            max = currentTemp
+        }
+        if (currentTemp < min) {
+            min = currentTemp
+        }
+
+    }
+
+
+    console.log(max, min)
+    return max - min
+}
+
+const amplitudeNew = calcTempAmplitudeNew([1, 3, -1, 5, "error"], [23, -9, 34, 33])
+console.log(amplitudeNew)
