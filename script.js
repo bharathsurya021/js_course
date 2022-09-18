@@ -190,6 +190,7 @@ for (let i = 0; i < 4; i++) {
     console.log(arr1[i], typeof arr1[i]);
 }
 
+<<<<<<< HEAD
 
 
 for (let i = arr1.length - 1; i >= 0; i--) {
@@ -226,3 +227,5 @@ while (dice !== 6) {
     }
 }
 console.log(dice);
+=======
+>>>>>>> dae9c23ce0346d596cdb94533b5a5bad2315f36b
