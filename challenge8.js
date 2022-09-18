@@ -4,14 +4,18 @@ const calcTip = (bill) => {
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
 const tips = []
 const totals = []
-
-let sum = 0
-
 for (let i = 0; i < bills.length; i++) {
     tips.push(calcTip(bills[i]))
     totals[i] = bills[i] + tips[i]
-    sum = sum + totals[i]
-    avg = sum / totals.length
-    console.log(avg);
+
 }
 
+const calcAvg = function (arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum / arr.length
+}
+
+console.log(calcAvg(totals));
