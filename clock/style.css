@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@600;700&display=swap');
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 600;
+}
+
+body{
+    background:linear-gradient(to right, rgb(245, 151, 229),rgb(111, 238, 238));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.clock-container{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(244, 250, 255, 0.8);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.clock-container .hour{
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.25rem;
+}
+
+
+.clock-container .hour1{ --rotation:30deg;}
+.clock-container .hour2{ --rotation:60deg;}
+.clock-container .hour3{ --rotation:90deg;}
+.clock-container .hour4{ --rotation:120deg;}
+.clock-container .hour5{ --rotation:150deg;}
+.clock-container .hour6{ --rotation:180deg;}
+.clock-container .hour7{ --rotation:210deg;}
+.clock-container .hour8{ --rotation:240deg;}
+.clock-container .hour9{ --rotation:270deg;}
+.clock-container .hour10{ --rotation:300deg;}
+.clock-container .hour11{ --rotation:330deg;}
+
+.clock-container .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 40%;
+    background-color: black;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 10;
+
+}
+
+.clock-container::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+.clock-container .hand.hour-hand{
+    width: 10px;
+    height: 35%;
+    background-color: blue;
+}
+.clock-container .hand.min-hand{
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+.clock-container .hand.sec-hand{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
