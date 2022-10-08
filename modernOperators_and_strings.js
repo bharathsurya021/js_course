@@ -27,33 +27,75 @@ const restaurant = {
     },
     orderDelivery: function ({ starterIndex = 1, mainIndex = 0, address, time = '20:00' }) {
         console.log(`order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delievred to ${address} at ${time}`);
+    },
+    orderPasta: function (ing1, ing2, ing3) {
+        console.log(`Here is your delicious pasts made with ${ing1},${ing2} and ${ing3}`);
     }
 }
 
-restaurant.orderDelivery({ time: '23:30', address: 'via del sol, 21', mainIndex: 2, starterIndex: 3, })
-restaurant.orderDelivery({ address: 'via del sol, 21', starterIndex: 3, })
+// const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'), prompt('Let\'s make pasta! Ingredient 2?'), prompt('Let\'s make pasta! Ingredient 3?')]
+// console.log(ingredients)
+
+// restaurant.orderPasta(...ingredients)
+const newmenu = [...restaurant.mainMenu, 'Gnocci']
+console.log(newmenu)
+//join arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
+
+console.log(menu)
+
+const str = 'bharath'
+const letters = [...str, ' ', 'N.']
+console.log(letters)
+console.log(...str)
+
+
+//general way
+const arr = [7, 8, 9]
+
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]]
+// console.log(badNewArr)
+
+//with spread operator
+
+const newArr = [1, 2, ...arr]
+console.log(newArr)
+console.log(...newArr)
+
+// spread operator for objects
+
+const newRestaurant = { ...restaurant, founder: 'bharath', foundingYear: 1996 }
+console.log(newRestaurant)
+
+const restaurantCopy = { ...restaurant }
+restaurantCopy.name = 'ristoranta roma'
+
+console.log(restaurantCopy)
+
+// restaurant.orderDelivery({ time: '23:30', address: 'via del sol, 21', mainIndex: 2, starterIndex: 3, })
+// restaurant.orderDelivery({ address: 'via del sol, 21', starterIndex: 3, })
 
 
 
-//destructuring objects
-const { name: restaurantName, openingHours, categories } = restaurant
-console.log(restaurantName, openingHours, categories)
+// //destructuring objects
+// const { name: restaurantName, openingHours, categories } = restaurant
+// console.log(restaurantName, openingHours, categories)
 
-//default values
-const { menu = [], starterMenu: starters = [] } = restaurant
-console.log(menu, starters)
+// //default values
+// const { menu = [], starterMenu: starters = [] } = restaurant
+// console.log(menu, starters)
 
-//mutating variables
-let a = 111
-let b = 999
-const obj = { a: 23, b: 7, c: 14 };
-({ a, b } = obj)
+// //mutating variables
+// let a = 111
+// let b = 999
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj)
 
-console.log(a, b);
+// console.log(a, b);
 
-//nested objects
-const { fri: { open, close } } = restaurant.openingHours
-console.log(open, close)
+// //nested objects
+// const { fri: { open, close } } = restaurant.openingHours
+// console.log(open, close)
 
 
 // console.log(restaurant.order(2, 0))
