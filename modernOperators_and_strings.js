@@ -19,3 +19,5 @@ console.log(arr)
 
 const [first, second] = restaurant.categories
 console.log(first, second) // first and second element of category array
+const [firstel, , thirdel] = restaurant.categories // leave an empty place to skip through and give us the third element
+console.log(firstel, thirdel) // first and third element of category array
