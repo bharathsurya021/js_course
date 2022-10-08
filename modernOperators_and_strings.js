@@ -19,5 +19,18 @@ console.log(arr)
 
 const [first, second] = restaurant.categories
 console.log(first, second) // first and second element of category array
-const [firstel, , thirdel] = restaurant.categories // leave an empty place to skip through and give us the third element
+const [firstel, , , thirdel] = restaurant.categories // leave an empty place to skip through and give us the third element
 console.log(firstel, thirdel) // first and third element of category array
+
+let [main, , secondary] = restaurant.categories
+console.log(main, secondary);
+
+//switching variables
+// const temp = main
+// main = secondary
+// secondary = temp
+
+// console.log(main, secondary) change main and secondary category
+
+[main, secondary] = [secondary, main] //switching by destructuring
+console.log(main, secondary)
