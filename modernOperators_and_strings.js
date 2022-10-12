@@ -200,6 +200,11 @@ restaurant.numGuests = 22
 const guest2 = restaurant.numGuests || 10
 console.log(guest2)
 
+//Null coalescing operator
+//Nullish:null and undefined(0 and ''are not included in falsy values)
+const guest3 = restaurant.numGuests ?? 10
+console.log(guest3)
+
 //And short-circuiting- shortcircuits when first value is falsy and doesn't even look at second one, if 1st is truthy return second value
 console.log('___AND___')
 console.log(0 && 'Jonas')
@@ -211,5 +216,4 @@ if (restaurant.orderPizza) {
 }
 //execute second one if first one is true using AND
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach')
-
 
