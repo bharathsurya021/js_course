@@ -180,3 +180,36 @@ add(...x)
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach')
 restaurant.orderPizza('mushrooms')
+
+//Use any data type, return any data type,short-circuiting
+//if first value is truthy, js does not even look at second value in case of OR shor circuit
+console.log(3 || 'jonas')
+console.log(0 || 'jonas')
+console.log(true || 0)
+console.log(undefined || null)
+
+console.log(undefined || 0 || '' || 'Hello' || 23)//first truthy value returns
+// setting default values using short-circuiting is much easier than iternary operators or if else statements
+
+restaurant.numGuests = 0
+const guests1 = restaurant.numGuests ? numGuests : 10
+console.log(guests1)
+restaurant.numGuests = 22
+
+//set default values using OR
+const guest2 = restaurant.numGuests || 10
+console.log(guest2)
+
+//And short-circuiting- shortcircuits when first value is falsy and doesn't even look at second one, if 1st is truthy return second value
+console.log('___AND___')
+console.log(0 && 'Jonas')
+console.log(7 && 'Jonas')
+console.log('hello' && 23 && null && 'Jonas')
+
+if (restaurant.orderPizza) {
+    restaurant.orderPizza('mushrooms', 'spinach')
+}
+//execute second one if first one is true using AND
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach')
+
+
