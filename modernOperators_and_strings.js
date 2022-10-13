@@ -216,4 +216,15 @@ if (restaurant.orderPizza) {
 }
 //execute second one if first one is true using AND
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach')
+//for-of loop
+
+for (const item of menu) console.log(item)
+// for (const item of menu.entries()) {
+//     console.log(item)
+//     console.log(`${item[0] + 1}: ${item[1]}`)
+// }
+
+for (const [index, element] of menu.entries()) {
+    console.log(`${index + 1}: ${element}`)
+}
 
