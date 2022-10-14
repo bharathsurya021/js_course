@@ -39,6 +39,7 @@ const game = {
         team2: 6.5,
     },
 };
+
 const [players1, players2] = game.players
 const [gk, ...fieldPlayers] = players1
 
@@ -52,6 +53,22 @@ const { odds: { team1, x: draw, team2 } } = game
 
 console.log(team1, draw, team2)
 
+for (const [team, odd] of Object.entries(game.odds)) {
+    const teamStr = team === 'x' ? 'draw' : `vicotry ${game[team]}`
+    console.log(`Odd of ${teamStr} : ${odd}`)
+}
+
+for (const [key, value] of game.scored.entries()) {
+    console.log(`Goal${key + 1}:${value}`)
+}
+let sum = 0
+const odds = Object.values(game.odds)
+for (const odd of odds) {
+    sum += odd
+}
+const avg = sum / odds.length
+console.log(avg)
+
 const printGoals = function (...goalScorers) {
 
     console.log(`${goalScorers.length} goals were scored`)
@@ -64,6 +81,11 @@ const printGoals = function (...goalScorers) {
 
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich')
 printGoals(...game.scored)
+const scorers = {}
+for (const goalScorer of game.scored) {
+    scorers[goalScorer] ? scorers[goalScorer]++ : scorers[goalScorer] = 1
+}
+console.log(scorers)
 
 team1 < team2 && console.log('Team 1 is more likely to win')
 team1 > team2 && console.log('Team 2 is more likely to win')
