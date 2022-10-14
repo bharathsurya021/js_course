@@ -1,37 +1,42 @@
 'use strict';
-
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+const openingHours = {
+    thu: {
+        open: 12,
+        close: 22,
+    },
+    fri: {
+        open: 11,
+        close: 23,
+    },
+    sat: {
+        open: 0, // Open 24 hours
+        close: 24,
+    },
+}
 const restaurant = {
     name: 'Classico Italiano',
     location: 'Via Angelo Tavanti 23, Firenze, Italy',
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+    // openingHours: openingHours, -dont't need to use like this anymore
 
-    openingHours: {
-        thu: {
-            open: 12,
-            close: 22,
-        },
-        fri: {
-            open: 11,
-            close: 23,
-        },
-        sat: {
-            open: 0, // Open 24 hours
-            close: 24,
-        },
-    },
-
-    order: function (starterIndex, mainIndex) {
+    // Es6 enhanced object literals
+    openingHours,
+    // order: function (starterIndex, mainIndex) {
+    //     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+    // },
+    order(starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
     },
-    orderDelivery: function ({ starterIndex = 1, mainIndex = 0, address, time = '20:00' }) {
+    orderDelivery({ starterIndex = 1, mainIndex = 0, address, time = '20:00' }) {
         console.log(`order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delievred to ${address} at ${time}`);
     },
-    orderPasta: function (ing1, ing2, ing3) {
+    orderPasta(ing1, ing2, ing3) {
         console.log(`Here is your delicious pasts made with ${ing1},${ing2} and ${ing3}`);
     },
-    orderPizza: function (mainIngredients, ...otherIngredients) {
+    orderPizza(mainIngredients, ...otherIngredients) {
         console.log(otherIngredients)
     }
 }
@@ -226,5 +231,17 @@ for (const item of menu) console.log(item)
 
 for (const [index, element] of menu.entries()) {
     console.log(`${index + 1}: ${element}`)
+}
+
+//without optional chaining
+// console.log(restaurant.openingHours.mon.open) //-error
+//optional chaining
+console.log(restaurant.openingHours?.mon?.open)
+console.log(restaurant.openingHours.mon?.open)
+
+for (const day of days) {
+    console.log(day)
+    const open = restaurant.openingHours[day]?.open ?? 'Closed'
+    console.log(`On ${day},we open at ${open}`)
 }
 
