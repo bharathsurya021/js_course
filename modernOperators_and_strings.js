@@ -249,3 +249,25 @@ for (const day of days) {
 
 console.log(restaurant.order?.(0, 1) ?? 'Method does not exist')
 console.log(restaurant.orderRoisotto?.(0, 1) ?? 'Method does not exist')
+
+//Looping objects
+const properties = Object.keys(openingHours)
+console.log(properties)
+let openStr = `we are open on ${properties.length} days:`
+for (const day of Object.keys(openingHours)) {
+    openStr += `${day}, `
+}
+console.log(openStr)
+
+//property values
+const values = Object.values(openingHours)
+console.log(values)
+
+//Entries object
+
+const entries = Object.entries(openingHours)
+console.log(entries)
+
+for (const [key, { open, close }] of entries) {
+    console.log(`On ${key}, we open at ${open} and close at ${close}`)
+}
