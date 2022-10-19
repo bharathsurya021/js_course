@@ -86,6 +86,37 @@ for (const goalScorer of game.scored) {
     scorers[goalScorer] ? scorers[goalScorer]++ : scorers[goalScorer] = 1
 }
 console.log(scorers)
+const gameEvents = new Map([
+    [17, '⚽️ GOAL'],
+    [36, '🔁 Substitution'],
+    [47, '⚽️ GOAL'],
+    [61, '🔁 Substitution'],
+    [64, '🔶 Yellow card'],
+    [69, '🔴 Red card'],
+    [70, '🔁 Substitution'],
+    [72, '🔁 Substitution'],
+    [76, '⚽️ GOAL'],
+    [80, '⚽️ GOAL'],
+    [92, '🔶 Yellow card'],
+])
+//create an array with unique game events
+const events = [...new Set(gameEvents.values())]
+console.log(events)
 
+gameEvents.delete(64)
+
+const time = [...gameEvents.keys()].pop()
+console.log(time)
+
+console.log(`An event happened, on average, every ${time / gameEvents.size} minutes`)
+
+for (const [key, value] of gameEvents) {
+    console.log(
+        key < 45 ? `[FIRST HALF]${key}: ${value} `
+            : key > 45 && key < 90 ? `[SECOND HALF]${key}: ${value} `
+                : `[EXTRA TIME]${key}: ${value} `
+    )
+
+}
 team1 < team2 && console.log('Team 1 is more likely to win')
 team1 > team2 && console.log('Team 2 is more likely to win')
