@@ -271,3 +271,33 @@ console.log(entries)
 for (const [key, { open, close }] of entries) {
     console.log(`On ${key}, we open at ${open} and close at ${close}`)
 }
+
+//Sets - unique set of elements and order of elements in the set is irrelevant
+
+const orderSet = new Set(['Pasta', 'Pizza', 'Risotto', 'Pasta', 'Pizza'])
+
+console.log(orderSet)
+
+console.log(new Set('Jonas'))
+
+console.log(orderSet.size)
+
+console.log(orderSet.has('Pizza'))//similar to includes in array data tipe
+console.log(orderSet.has('Bread'))
+
+orderSet.add('Garlic Bread')
+orderSet.delete('Risotto')
+console.log(orderSet)
+
+// orderSet.clear() - clear the entire set
+console.log(orderSet)
+
+for (const order of orderSet) console.log(order)
+
+// Example
+
+const staff = ['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef']
+
+const staffUniq = new Set(staff)
+const staffUnix = [...new Set(staff)]
+console.log(staffUniq, staffUnix)
