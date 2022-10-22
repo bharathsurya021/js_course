@@ -1,3 +1,4 @@
+//Dont forget to add this script file in index.html
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
