@@ -372,3 +372,71 @@ if (question.get('correct') === answer) {
 
 //convert map to an array
 console.log([...question])
+
+//Strings
+
+const airline = 'TAP Air Portugal'
+const plane = 'A320'
+console.log(airline[0])
+
+console.log(airline.indexOf('r'))
+console.log(airline.lastIndexOf('r'))
+console.log(airline.indexOf('Portugal'))
+console.log(airline.indexOf('portugal'))
+console.log(airline.slice(0, 5))//end value not included
+console.log(airline.slice(5))
+console.log(airline.slice(0, airline.indexOf(' ')))
+console.log(airline.slice(airline.lastIndexOf(' ') + 1))
+console.log(airline.includes('A'))
+console.log(airline.endsWith('l'))
+console.log(airline.length)
+
+const passenger = 'jonAs'
+const passengerLower = passenger.toLowerCase()
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1)
+console.log(passengerCorrect)
+
+const price = '2,333,24€'
+const priceUS = price.replace(',', '.').replace('€', '')
+
+const announcement = 'All students come to school door 1, entry door 1'
+
+console.log(announcement.replace(/door/g, 'gate')); //regex to replace all
+
+//Capitalize a words
+
+function capitalizeWords(name) {
+    const names = name.split(' ')
+    const capitalizedWords = []
+    for (const word of names) {
+        // capitalizedWords.push(word[0].toUpperCase() + word.slice(1))
+
+        capitalizedWords.push(word.replace(word[0], word[0].toUpperCase()))
+    }
+    console.log(capitalizedWords.join(' '))
+}
+
+
+capitalizeWords('karthik surya sulochan')
+
+//Padding a string
+
+const message = 'Come here to learn'
+console.log(message.padStart(25, '-').padEnd(35, '-'))
+
+const maskCardNumber = function (number) {
+    const str = String(number);
+
+    const lastfour = str.slice(-4)
+
+    return lastfour.padStart(12, '*')
+
+}
+
+console.log(maskCardNumber(456723470668))
+
+//Repeat
+
+const messageRepeat = 'Bad weather... All departures are delayed...  '
+
+console.log(messageRepeat.repeat(5))
