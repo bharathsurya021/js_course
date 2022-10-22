@@ -6,13 +6,13 @@ console.log(flights.split('+'))
 for (const flight of flights.split('+')) {
     const [status, boarding, destination, travelTime] = flight.split(';')
 
-    const flightStatus = status.split('_').slice(1).join(' ')
+    // const flightStatus = status.split('_').slice(1).join(' ')
+    const flightStatus = `${status.startsWith('_Delayed') ? '🔴' : ''}${status.replaceAll('_', ' ')}`
 
-    const fromCode = boarding.slice(0, 3).toUpperCase()
-    const toCode = destination.slice(0, 3).toUpperCase()
+    const getCode = str => str.slice(0, 3).toUpperCase()
 
-    const duration = travelTime.split(':').join('h')
+    const duration = travelTime.replace(':', 'h')
 
-    const output = `${flightStatus} from ${fromCode} to ${toCode} (${duration})`
+    const output = `${flightStatus} from ${getCode(boarding)} to ${getCode(destination)} (${duration})`.padStart(50)
     console.log(output)
 }
