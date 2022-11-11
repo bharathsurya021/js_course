@@ -42,3 +42,18 @@ const newPassport = function (person) {
 
 newPassport(jonas)
 checkIn(flight, jonas)
+
+//IIFE- immediately invoked function expression
+
+//regular fn expression
+const runOnce = function () {
+    console.log("This will never run again")
+}
+
+runOnce();
+//IIFE
+(function () {
+    console.log("This will never run again")
+})();
+
+(() => console.log("this will never run again"))()
